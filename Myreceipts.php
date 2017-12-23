@@ -40,8 +40,9 @@ $id=$_SESSION["username"];
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE)
 		or die("Please contact Admin. Error: Could not connect to the database : ".mysqli_connect_error());
 
-$sql = "SELECT distinct C.Initiative_Number Viewreceipt,Initiative_Name,Sponsorship_Total from initiatives A,contributions B,silentservants C where A.Initiative_Number=B.Initiative_Number and A.Initiative_Number=C.Initiative_Number 
-and C.silentservant_ID=B.silentservant_ID and Sponsorship_Total<>0 and A.Initiative_Status<>'Cancelled' and B.username='$id' ";
+$sql = "SELECT A.userid, B.Initiative_Number, C.Initiative_Name, B.Sponsorship_Total from useraccess A, contributions B, initiatives C 
+			where A.username = '$id' and A.userid = B.silentservant_ID and B.Initiative_Number = C.Initiative_Number 
+			and Sponsorship_Total<>0 and C.Initiative_Status<>'Cancelled'";
 
 $result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 
@@ -62,7 +63,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	echo "<tr>";
 	echo "<td>".$row['Initiative_Name']."</td>";
 	echo "<td>".$row['Sponsorship_Total']."</td>";
-	echo "<td><a href=\"Receipts.php?prop_id=".$row['Viewreceipt']."\">Click </a></td>";
+	echo "<td><a href=\"Receipts.php?userid=".$row[userid]."&prop_id=".$row['Initiative_Number']."\">Click </a></td>";
 	echo "</tr>";
 }
 

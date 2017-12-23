@@ -36,13 +36,13 @@ if(!isset($_SESSION['username']))
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE)
 		or die("Please contact Admin. Error: Could not connect to the database : ".mysqli_connect_error());
 
-$sql = "select Sponsorship_Total,username from (
-select sum(Sponsorship_Total) Sponsorship_Total,username from contributions group by username order by username asc
-)  A where A.Sponsorship_Total <>0";
-$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
+$sql = "select sum(B.Sponsorship_Total) Sponsorship_Total, A.username from useraccess A, contributions B 
+			where A.userid = B.Silentservant_ID 
+			and B.Sponsorship_Total<>0 
+			group by B.Silentservant_ID 
+			order by A.username ";
 
-$sql1 = "select sum(Sponsorship_Total) Total from contributions";
-$result1 = mysqli_query($db,$sql1) or die("Error: ".mysqli_error($db));
+$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 
 ?>
 
@@ -58,23 +58,22 @@ $result1 = mysqli_query($db,$sql1) or die("Error: ".mysqli_error($db));
 
 <?php
 
+$GrandTotal = 0;
+
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {
 	echo "<tr>";
 	echo "<td>".$row['username']."</td>";
 	echo "<td>".$row['Sponsorship_Total']."</td>";
-
 	echo "</tr>";
+
+	$GrandTotal += $row['Sponsorship_Total'];
 }
 
-while($row = mysqli_fetch_array($result1, MYSQLI_ASSOC))
-{
-	echo "<tr>";
-	echo "<td style=\"font-weight:bold\">TOTAL</td>";
-	echo "<td style=\"font-weight:bold\">".$row['Total']."</td>";
-
-	echo "</tr>";
-}
+echo "<tr>";
+echo "<td style=\"font-weight:bold\">TOTAL Crosscheck</td>";
+echo "<td style=\"font-weight:bold\">".$GrandTotal."</td>";
+echo "</tr>";
 
 ?>
 

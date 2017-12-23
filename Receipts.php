@@ -23,6 +23,10 @@
 
 <div class="content" align="center" >
 
+<br>
+<a href="javascript:history.back()">Back</a>
+<br>
+<br>
 
 <?php
 
@@ -36,52 +40,31 @@ if(!isset($_SESSION['username']))
 }
 
 $id=$_SESSION["username"];
-$id1=$_GET['prop_id'];
+$userid=$_GET['userid'];
+$prop_id=$_GET['prop_id'];
 
-
-
-$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE)
-		or die("Please contact Admin. Error: Could not connect to the database : ".mysqli_connect_error());
-
-$sql = "SELECT concat(userid,Initiative_Number) receipt1,Initiative_Number FROM useraccess A,silentservants B WHERE A.username = '$id' AND A.userid=B.silentservant_ID  and B.Initiative_Number='$id1'";
-
-$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
-
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-$filename="images/".$row['receipt1'].".jpg" ;
-$filename1="images/".$row['Initiative_Number'].".pdf" ;
-$filename2="images/".$row['Initiative_Number'].".jpg" ;
-
-
-
-
-
+$filename="images/".$userid.$prop_id.".jpg" ;
+$filename1="images/".$prop_id.".pdf" ;
+$filename2="images/".$prop_id.".jpg" ;
 
 if (file_exists($filename))
 {
-	echo "<img src='images/".$row['receipt1'].".jpg ' width=680 height=380 >";
-
+	echo "<img src='".$filename."' width=680 height=380 >";
 }
 else if (file_exists($filename1))
 {
-
-
-	echo "<iframe src=\"images/".$row['Initiative_Number'].".pdf\" width=\"100%\" style=\"height:100%\"></iframe>";
-
+	echo "<iframe src='".$filename1."' width=\"100%\" style=\"height:100%\"></iframe>";
 }
 else if (file_exists($filename2))
 {
-	echo "<img src='images/".$row['Initiative_Number'].".jpg ' width=680 height=380 >";
+	echo "<img src='".$filename2."' width=680 height=380 >";
 }
 else
 {
 	echo "<p align=center ><br /><br /><br /><br /><br /><br /><br /><br /><br />Receipt not available</p>";
 }
 
-
 ?>
-
 
 </div>
 </body>
