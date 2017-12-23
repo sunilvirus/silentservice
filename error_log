@@ -1,0 +1,72 @@
+[29-Oct-2017 09:12:35 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 09:12:47 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 09:12:47 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 28
+[29-Oct-2017 09:12:47 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 30
+[29-Oct-2017 09:12:47 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 31
+[29-Oct-2017 09:12:47 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 09:12:47 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 09:31:09 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 09:31:22 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 09:31:22 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 28
+[29-Oct-2017 09:31:22 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 30
+[29-Oct-2017 09:31:22 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 31
+[29-Oct-2017 09:31:22 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 09:31:22 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:04:58 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:05:06 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:05:06 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 28
+[29-Oct-2017 10:05:06 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 30
+[29-Oct-2017 10:05:06 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 31
+[29-Oct-2017 10:05:06 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:05:06 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:18:20 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:18:33 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:18:33 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 28
+[29-Oct-2017 10:18:33 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 30
+[29-Oct-2017 10:18:33 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 31
+[29-Oct-2017 10:18:33 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:18:33 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:18:37 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:18:52 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:18:52 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 28
+[29-Oct-2017 10:18:52 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 30
+[29-Oct-2017 10:18:52 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 31
+[29-Oct-2017 10:18:52 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:18:52 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Login.php on line 36
+[29-Oct-2017 10:22:16 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Login.php on line 16
+[29-Oct-2017 10:34:39 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Silentservants.php on line 28
+[29-Oct-2017 10:34:39 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Silentservants.php on line 38
+[29-Oct-2017 10:34:39 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Silentservants.php on line 38
+[29-Oct-2017 10:34:43 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (-2) in /home/silenwrr/public_html/Silentservants.php on line 28
+[29-Oct-2017 10:34:43 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Silentservants.php on line 38
+[29-Oct-2017 10:34:43 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/silenwrr/public_html/Silentservants.php on line 38
+[30-Oct-2017 00:30:45 America/New_York] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/silenwrr/public_html/Initiatives.php on line 63
+[30-Oct-2017 00:30:57 America/New_York] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/silenwrr/public_html/Initiatives.php on line 63
+[30-Oct-2017 00:31:17 America/New_York] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/silenwrr/public_html/Initiatives.php on line 63
+[30-Oct-2017 00:31:42 America/New_York] PHP Notice:  Undefined index: username in /home/silenwrr/public_html/Myreceipts.php on line 28
+[30-Oct-2017 00:31:56 America/New_York] PHP Notice:  Undefined index: username in /home/silenwrr/public_html/Myreceipts.php on line 28
+[30-Oct-2017 00:35:38 America/New_York] PHP Notice:  Undefined index: username in /home/silenwrr/public_html/Myreceipts.php on line 28
+[30-Oct-2017 00:36:50 America/New_York] PHP Notice:  Undefined index: username in /home/silenwrr/public_html/Myreceipts.php on line 28
+[30-Oct-2017 00:37:11 America/New_York] PHP Notice:  Undefined index: username in /home/silenwrr/public_html/Myreceipts.php on line 28
+[30-Oct-2017 00:37:30 America/New_York] PHP Notice:  Undefined index: username in /home/silenwrr/public_html/Myreceipts.php on line 28
+[30-Oct-2017 00:53:43 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:54:00 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:54:25 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:54:37 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:56:01 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:56:16 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:56:51 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:59:12 America/New_York] PHP Notice:  Undefined variable: _SESSION in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 00:59:12 America/New_York] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/silenwrr/public_html/Initiatives.php on line 27
+[30-Oct-2017 00:59:32 America/New_York] PHP Notice:  Undefined variable: _SESSION in /home/silenwrr/public_html/Receipts.php on line 28
+[30-Oct-2017 00:59:38 America/New_York] PHP Notice:  Undefined variable: _SESSION in /home/silenwrr/public_html/Receipts.php on line 28
+[30-Oct-2017 01:02:53 America/New_York] PHP Notice:  Undefined variable: _SESSION in /home/silenwrr/public_html/Initiatives.php on line 26
+[30-Oct-2017 01:02:53 America/New_York] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/silenwrr/public_html/Initiatives.php on line 27
+[30-Oct-2017 01:28:26 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:30:12 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:32:12 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:38:07 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:41:50 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:42:25 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:43:27 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
+[30-Oct-2017 01:43:54 America/New_York] PHP Notice:  Undefined index: timestamp in /home/silenwrr/public_html/Initiatives.php on line 36
