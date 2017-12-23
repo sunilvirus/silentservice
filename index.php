@@ -8,7 +8,7 @@
 
 <div class="content"  >
 <div class=myimages >
-<img src="../images/pic5.jpg" alt="SERVE1" >
+<img src="images/pic5.jpg" alt="SERVE1" >
 </div>
 
 <div class="block1" align="right" >
