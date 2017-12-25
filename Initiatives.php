@@ -9,16 +9,7 @@
 
 <body>
 <?php include("Navigator.php"); ?>
-
-<div class="navleft" >
-<ul >
-<li ><a href="Silentservants.php" >Donations</a></li>
-<li > <a href="Initiatives.php">Initiatives</a></li>
-<li > <a href="Myreceipts.php">My Receipts</a></li>
-
-</ul>
-
-</div>
+<?php include("LeftNavigator.php"); ?>
 
 <div class="content" align="center" >
 

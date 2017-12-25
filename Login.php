@@ -23,8 +23,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE)
 		or die("Please contact Admin. Error: Could not connect to the database : ".mysqli_connect_error());
 
-	$_SESSION['username'] = mysqli_real_escape_string($db,$_POST['username']);
-
 	$myusername = mysqli_real_escape_string($db,$_POST['username']);
 	$mypassword = mysqli_real_escape_string($db,$_POST['password']); 
 
@@ -35,6 +33,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	// If result matched $myusername and $mypassword, table row must be 1 row
 	if($count == 1) {
+		$_SESSION['username'] = mysqli_real_escape_string($db,$_POST['username']);
+		$_SESSION['userid'] = $row['userid'];
+
 		echo "Valid user logged in";
 		header("location: Silentservants.php");
 	} else {

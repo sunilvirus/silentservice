@@ -9,17 +9,7 @@
 
 <body>
 <?php include("Navigator.php"); ?>
-
-
-<div class="navleft" >
-<ul >
-<li ><a href="Silentservants.php" >Donations</a></li>
-<li > <a href="Initiatives.php">Initiatives</a></li>
-<li > <a href="Myreceipts.php">My Receipts</a></li>
-
-</ul>
-
-</div>
+<?php include("LeftNavigator.php"); ?>
 
 <div class="content" align="center" >
 
@@ -40,12 +30,12 @@ if(!isset($_SESSION['username']))
 }
 
 $id=$_SESSION["username"];
-$userid=$_GET['userid'];
+$userid=$_SESSION['userid'];
 $prop_id=$_GET['prop_id'];
 
-$filename="images/".$userid.$prop_id.".jpg" ;
-$filename1="images/".$prop_id.".pdf" ;
-$filename2="images/".$prop_id.".jpg" ;
+$filename="images/receipts/".$userid."_".$prop_id.".jpg" ;
+$filename1="images/receipts/".$prop_id.".pdf" ;
+$filename2="images/receipts/".$prop_id.".jpg" ;
 
 if (file_exists($filename))
 {
