@@ -61,7 +61,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 }
 
 echo "<tr>";
-echo "<td style=\"font-weight:bold\">TOTAL Crosscheck</td>";
+echo "<td style=\"font-weight:bold\">TOTAL</td>";
 echo "<td style=\"font-weight:bold\">".$GrandTotal."</td>";
 echo "</tr>";
 

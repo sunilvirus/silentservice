@@ -48,7 +48,7 @@ else if ($row['Initiative_Status'] != 'Ongoing') {
 	render_contri_table($db, $ini_num, false);
 }
 else if (!is_null($_GET['delete_ssid'])) {
-	$sql = "delete from contributions where silentservant_ID = ".$_GET['delete_ssid'];
+	$sql = "delete from contributions where silentservant_ID = ".$_GET['delete_ssid']." and Initiative_Number = ".$ini_num;
 	$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 	echo "<br><br>Successfully deleted entry<br>".PHP_EOL;
 
@@ -59,7 +59,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$ssid = $_POST['ssid'];
 	$sunits = $_POST['Sponsorships'];
 	$sunitcost = $_POST['Sponsorship_Amount'];
-	$stotal = $_POST['Sponsorship_Total'];
+	$stotal = $sunits * $sunitcost;
 	$sdate = mysqli_real_escape_string($db,$_POST['Sponsorship_Date']);
 
 	$sql = "insert into contributions values($ssid, $ini_num, $sunits, $sunitcost, $stotal, \"$sdate\")";
@@ -134,7 +134,6 @@ function render_add_contri_form($db, $ini_num) {
 	echo "</select></td>".PHP_EOL;
 	echo "<tr><td>Number of sponsorships </td><td>: <input type=text name=Sponsorships></td></tr>".PHP_EOL;
 	echo "<tr><td>Each sponsorship amount </td><td>: <input type=text name=Sponsorship_Amount></td></tr>".PHP_EOL;
-	echo "<tr><td>Sponsorship total </td><td>: <input type=text name=Sponsorship_Total></td></tr>".PHP_EOL;
 	echo "<tr><td>Date </td><td>: <input type=date name=Sponsorship_Date placeholder=\"yyyy-mm-dd\"></td></tr>".PHP_EOL;
 	echo "<tr><td><button type=submit name=Submit>Submit</button></td></tr>".PHP_EOL;
 	echo "</form>";

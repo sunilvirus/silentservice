@@ -27,7 +27,7 @@ if(!isset($_SESSION['username']))
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE)
 		or die("Please contact Admin. Error: Could not connect to the database : ".mysqli_connect_error());
 
-$sql = "select A.Initiative_Name,A.Initiative_Details,A.Initiative_Category,A.Contributions from (select B.Initiative_Name Initiative_Name,B.Initiative_Details Initiative_Details,B.Initiative_Category Initiative_Category,A.Contributions Contributions from (select Initiative_Name,Initiative_Category,Initiative_Details,Initiative_Number from initiatives where Initiative_Status<>'Cancelled') B, (select sum(Sponsorship_Total) Contributions,Initiative_Number from contributions group by Initiative_Number) A where B.Initiative_Number=A.Initiative_Number) A WHERE A.Contributions <>0";
+$sql = "select A.Initiative_Name, A.Initiative_Details, A.Initiative_Category, sum(B.Sponsorship_Total) Contributions from initiatives A, contributions B where A.Initiative_Number = B.Initiative_Number and A.Initiative_Status <> 'Cancelled' group by B.Initiative_Number";
 
 $result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));;
 
