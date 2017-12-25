@@ -27,29 +27,32 @@ if(!isset($_SESSION['username']))
 // Accessing session data
 $userid=$_SESSION["userid"];
 $ini_num=$_GET['ini_num'];
-$delete_ssid = $_GET['delete_ssid'];
 
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE)
 		or die("Please contact Admin. Error: Could not connect to the database : ".mysqli_connect_error());
 
 // Cross check once that legal lead is modifying content
-$sql = "SELECT Initiative_Name from initiatives 
+$sql = "SELECT Initiative_Name, Initiative_Status from initiatives 
 			where (Lead_ID1 = $userid or Lead_ID2 = $userid or Lead_ID3 = $userid) 
-			and Initiative_Number = $ini_num 
-			and Initiative_Status<>'Cancelled'";
+			and Initiative_Number = $ini_num";
 
 $result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 $count = mysqli_num_rows($result);
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 if ($count == 0) {
 	echo "<br><br>You are not lead for this initiative!<br><a href=\"javascript:history.back()\">Back</a>".PHP_EOL;
 }
-else if (!is_null($delete_ssid)) {
-	$sql = "delete from contributions where silentservant_ID = $delete_ssid";
+else if ($row['Initiative_Status'] != 'Ongoing') {
+	// Came here only to view the table
+	render_contri_table($db, $ini_num, false);
+}
+else if (!is_null($_GET['delete_ssid'])) {
+	$sql = "delete from contributions where silentservant_ID = ".$_GET['delete_ssid'];
 	$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 	echo "<br><br>Successfully deleted entry<br>".PHP_EOL;
 
-	render_contri_table($db, $ini_num);
+	render_contri_table($db, $ini_num, true);
 	render_add_contri_form($db, $ini_num);
 }
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -63,11 +66,11 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 	echo "<br><br>Successfully added entry<br>".PHP_EOL;
 
-	render_contri_table($db, $ini_num);
+	render_contri_table($db, $ini_num, true);
 	render_add_contri_form($db, $ini_num);
 }
 else {
-	render_contri_table($db, $ini_num);
+	render_contri_table($db, $ini_num, true);
 	render_add_contri_form($db, $ini_num);
 }
 
@@ -79,7 +82,7 @@ else {
 </html>
 
 <?php
-function render_contri_table($db, $ini_num) {
+function render_contri_table($db, $ini_num, $editable) {
 	$sql = "select A.username, B.* from useraccess A, contributions B
 				where A.userid = B.silentservant_ID
 				and Initiative_Number = $ini_num";
@@ -92,7 +95,9 @@ function render_contri_table($db, $ini_num) {
 	echo "<TH>Sponsorship_Amount</TH>".PHP_EOL;
 	echo "<TH>Sponsorship_Total</TH>".PHP_EOL;
 	echo "<TH>Sponsorship_Date</TH>".PHP_EOL;
-	echo "<TH>Action</TH>".PHP_EOL;
+	if ($editable) {
+		echo "<TH>Action</TH>".PHP_EOL;
+	}
 	echo "</THEAD>".PHP_EOL;
 	echo "<TBODY BGCOLOR=\"white\">".PHP_EOL;
 
@@ -104,7 +109,9 @@ function render_contri_table($db, $ini_num) {
 		echo "<td>".$row['Sponsorship_Amount']."</td>";
 		echo "<td>".$row['Sponsorship_Total']."</td>";
 		echo "<td>".$row['Sponsorship_Date']."</td>";
-		echo "<td><a href=\"EditContributions.php?ini_num=".$row['Initiative_Number']."&delete_ssid=".$row['silentservant_ID']."\">Delete</a></td>";
+		if ($editable) {
+			echo "<td><a href=\"EditContributions.php?ini_num=".$row['Initiative_Number']."&delete_ssid=".$row['silentservant_ID']."\">Delete</a></td>";
+		}
 		echo "</tr>".PHP_EOL;
 	}
 
