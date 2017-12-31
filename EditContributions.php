@@ -15,8 +15,6 @@
 
 <?php
 
-session_start();
-
 if(!isset($_SESSION['username']))
 {
 	// not logged in
@@ -47,7 +45,7 @@ else if ($row['Initiative_Status'] != 'Ongoing') {
 	// Came here only to view the table
 	render_contri_table($db, $ini_num, false);
 }
-else if (!is_null($_GET['delete_ssid'])) {
+else if (isset($_GET['delete_ssid'])) {
 	$sql = "delete from contributions where silentservant_ID = ".$_GET['delete_ssid']." and Initiative_Number = ".$ini_num;
 	$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
 	echo "<br><br>Successfully deleted entry<br>".PHP_EOL;
@@ -62,9 +60,18 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$stotal = $sunits * $sunitcost;
 	$sdate = mysqli_real_escape_string($db,$_POST['Sponsorship_Date']);
 
-	$sql = "insert into contributions values($ssid, $ini_num, $sunits, $sunitcost, $stotal, \"$sdate\")";
+	$sql = "select * from contributions where silentservant_ID = ".$ssid." and Initiative_Number = ".$ini_num;
 	$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
-	echo "<br><br>Successfully added entry<br>".PHP_EOL;
+	$count = mysqli_num_rows($result);
+
+	if ($count != 0) {
+		echo "<br><br>Entry for the user already exists. Delete first and add again if you want to modify.<br>".PHP_EOL;
+	}
+	else {
+		$sql = "insert into contributions values($ssid, $ini_num, $sunits, $sunitcost, $stotal, \"$sdate\")";
+		$result = mysqli_query($db,$sql) or die("Error: ".mysqli_error($db));
+		echo "<br><br>Successfully added entry<br>".PHP_EOL;
+	}
 
 	render_contri_table($db, $ini_num, true);
 	render_add_contri_form($db, $ini_num);
@@ -95,7 +102,9 @@ function render_contri_table($db, $ini_num, $editable) {
 	echo "<TH>Sponsorship_Amount</TH>".PHP_EOL;
 	echo "<TH>Sponsorship_Total</TH>".PHP_EOL;
 	echo "<TH>Sponsorship_Date</TH>".PHP_EOL;
+	echo "<TH>View Receipt</TH>".PHP_EOL;
 	if ($editable) {
+		echo "<TH>Upload Receipt</TH>".PHP_EOL;
 		echo "<TH>Action</TH>".PHP_EOL;
 	}
 	echo "</THEAD>".PHP_EOL;
@@ -109,14 +118,20 @@ function render_contri_table($db, $ini_num, $editable) {
 		echo "<td>".$row['Sponsorship_Amount']."</td>";
 		echo "<td>".$row['Sponsorship_Total']."</td>";
 		echo "<td>".$row['Sponsorship_Date']."</td>";
+		echo "<td><a href=\"Receipts.php?uid=".$row['silentservant_ID']."&ini_num=".$ini_num."\">View </a></td>";
 		if ($editable) {
-			echo "<td><a href=\"EditContributions.php?ini_num=".$row['Initiative_Number']."&delete_ssid=".$row['silentservant_ID']."\">Delete</a></td>";
+			echo "<td><a href=\"UploadReceipt.php?uname=".$row['username']."&uid=".$row['silentservant_ID']."&ini_num=".$ini_num."\">Upload </a></td>";
+			echo "<td><a href=\"EditContributions.php?ini_num=".$ini_num."&delete_ssid=".$row['silentservant_ID']."\">Delete</a></td>";
 		}
 		echo "</tr>".PHP_EOL;
 	}
 
 	echo "</TBODY>".PHP_EOL;
 	echo "</TABLE>".PHP_EOL;
+
+	if ($editable) {
+		echo "<br><br><a href=\"UploadReceipt.php?ini_num=".$ini_num."\">Upload Common Receipt</a><br><br>";
+	}
 }
 
 function render_add_contri_form($db, $ini_num) {

@@ -20,8 +20,6 @@
 
 <?php
 
-session_start();
-
 if(!isset($_SESSION['username']))
 {
 	// not logged in
@@ -30,12 +28,12 @@ if(!isset($_SESSION['username']))
 }
 
 $id=$_SESSION["username"];
-$userid=$_SESSION['userid'];
-$prop_id=$_GET['prop_id'];
+$userid=$_GET['uid'];
+$initiative_id=$_GET['ini_num'];
 
-$filename="images/receipts/".$userid."_".$prop_id.".jpg" ;
-$filename1="images/receipts/".$prop_id.".pdf" ;
-$filename2="images/receipts/".$prop_id.".jpg" ;
+$filename="images/receipts/".$userid."_".$initiative_id.".jpg" ;
+$filename1="images/receipts/".$initiative_id.".pdf" ;
+$filename2="images/receipts/".$initiative_id.".jpg" ;
 
 if (file_exists($filename))
 {

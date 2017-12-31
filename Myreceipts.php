@@ -15,8 +15,6 @@
 
 <?php
 
-session_start();
-
 if(!isset($_SESSION['username']))
 {
 	// not logged in
@@ -53,7 +51,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	echo "<tr>";
 	echo "<td>".$row['Initiative_Name']."</td>";
 	echo "<td>".$row['Sponsorship_Total']."</td>";
-	echo "<td><a href=\"Receipts.php?prop_id=".$row['Initiative_Number']."\">Click </a></td>";
+	echo "<td><a href=\"Receipts.php?uid=".$id."&ini_num=".$row['Initiative_Number']."\">Click </a></td>";
 	echo "</tr>";
 }
 

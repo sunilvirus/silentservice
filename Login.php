@@ -14,8 +14,8 @@
 
 <?php
 
-session_unset();
-session_start();
+// Remove all session variables (which has username)
+$_SESSION = array();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	// username and password sent from form 
